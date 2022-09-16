@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(){
+    int flag=1;
+    char str[1000];
+    gets(str);
+    int arr[26];
+    for(int i=0;str[i]!='\0';i++){
+        if(str[i]>='A' && str[i]<='Z')
+            arr[(str[i]-65)]=1;
+        if(str[i]>='a' && str[i]<='z')
+            arr[(str[i]-97)]=1;
+    }
+    for(int i=0;i<26;i++){
+        if(arr[i]==0){
+            printf("Italy");
+            flag=0;
+            break;
+        }
+    }
+    if(flag)
+        printf("France");
+    return 0;
+}
